@@ -12,8 +12,8 @@ def CommonDivider(number):
 
 
 def IsItCommon(number):
-    for i in range(1,math.ceil(number / 2)+1):
-        if number % i == 0 and i != 1:
+    for i in range(2,math.ceil(number / 2)+1):
+        if number % i == 0:
             return False
     return True
 

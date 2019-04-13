@@ -17,4 +17,4 @@ def IsItCommon(number):
             return False
     return True
 
-CommonDivider(600851475143)
+#CommonDivider(600851475143)

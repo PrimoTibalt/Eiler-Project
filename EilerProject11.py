@@ -14,16 +14,39 @@ def maxMultiply(table):
         for j in range(len(table[i])):
             if j < len(table[i])-4:
                 maxMult = oprMax(numOfMult(table[i][j:j+4]), maxMult)
-            if j > 3 :
-                maxMult = oprMax(numOfMult(table[i][j-4:j]), maxMult)
-                if i > 3 :
-                    maxMult = oprMax(numOfMult(table[i-4:i][j - 4:j]), maxMult)
-                if i < len(table) - 4:
-                    maxMult = oprMax(numOfMult(table[i][j - 4:j]), maxMult)
-    print(table)
-
-def ways(string, onX, onY, maxX, maxY, interval):
-    string = 0
+                if i >= 3 :
+                    for mult in range(i-3,i+1):
+                        testMult *= table[mult][mult]
+                    maxMult = oprMax(testMult, maxMult)
+                    testMult = 1
+                if i < len(table) - 5:
+                    for mult in range(i,i+4):
+                        testMult *= table[mult][mult]
+                    maxMult = oprMax(testMult, maxMult)
+                    testMult = 1
+            if j >= 3 :
+                maxMult = oprMax(numOfMult(table[i][j-3:j]), maxMult)
+                if i >= 3 :
+                    for mult in range(i-3, i+1):
+                        testMult *= table[mult][mult]
+                    maxMult = oprMax(testMult, maxMult)
+                    testMult = 1
+                if i < len(table) - 5:
+                    for mult in range(j-3, j+1):
+                        testMult *= table[i-(mult-j)][mult]
+                    maxMult = oprMax(testMult, maxMult)
+                    testMult = 1
+            if i >= 3:
+                for mult in range(i-3, i+1):
+                    testMult *= table[mult][j]
+                maxMult = oprMax(testMult, maxMult)
+                testMult = 1
+            if i < len(table) - 5:
+                for mult in range(i, i + 4):
+                    testMult *= table[mult][j]
+                maxMult = oprMax(testMult, maxMult)
+                testMult = 1
+    print(maxMult)
 
 def numOfMult(string):
     return sum(string)

@@ -1,5 +1,6 @@
 
 def maxMultiply(table):
+    '''Search max value of multiplication 4 numeric in line in table(to the right, to the left, below, above, diagonal)'''
     maxMult = 0
     testMult = 1
     #Do table of integers from many rows of string

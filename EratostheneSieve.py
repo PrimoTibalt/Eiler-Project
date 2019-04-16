@@ -1,5 +1,6 @@
 import math
 def Sieve(maxNum):
+    '''return list with maxNum of privary numbers'''
     arrayOfNumbers = list(range(maxNum+1))
     for i in range(math.floor((maxNum+1)/2)):
         if(arrayOfNumbers[i] != 0):

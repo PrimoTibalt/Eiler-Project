@@ -1,10 +1,10 @@
 import math
 def howMuchDividers():
+    '''Serch the numeric which has 500 dividers'''
     i=3
     listOfThreeAngle = [[1,1], [3,2]]
     while(True):
         nextNum = sum(range(i))
-        print(nextNum)
         i+=1
         numOfDivider = 0
         for clone in range(1, len(listOfThreeAngle)):

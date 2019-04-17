@@ -7,4 +7,6 @@ def numberOfVaries():
     for num in range(20):
         number *= int(factField[num]) / int(factSecond[num])
     print(int(number))
+
 numberOfVaries()
+#in common - used Probability theory
